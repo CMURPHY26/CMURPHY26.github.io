@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.weather-widget, .traffic-widget {
+    width: 400px;
+    height: 600px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.weather, .traffic {
+    height: 200px;
+    border: 1px dotted black;
+    border-radius: 20px;
+    padding: 10px 15px 10px 15px;
+}
