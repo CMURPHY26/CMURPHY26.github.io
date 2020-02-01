@@ -38,7 +38,7 @@ h1 {
 .weather-widget, .traffic-widget {
     margin: 0 1% 15% 1%;
     width: 400px;
-    height: 600px;
+    height: 100%;
     border: 2px solid black;
     border-radius: 20px;
     display: flex;
@@ -78,4 +78,14 @@ h1 {
 .hour-card img {
     width: 100px;
     height: 100px;
+}
+
+#current-traffic {
+    height: 550px;
+    text-align: center;
+}
+
+#traffic-map {
+    height: 300px;
+    text-align: center;
 }
