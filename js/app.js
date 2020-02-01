@@ -40,7 +40,21 @@ $(() => {
             let $fullDateTime = data.list[i].dt_txt;
             //Get month and day info from full date
             let $fullDate = $fullDateTime.substring(5,10);
-            console.log($fullDate);
+            // console.log($fullDate);
+
+            //CONDITIONAL IF hour1 date does not match hour2 date
+            //THEN prepend the date to that div to show the new day
+            let $hour1 =(data.list[i].dt_txt).substring(5,10);
+            let $dateDiv = $("<div>").text($hour1);
+            if(i > 0) { 
+                let $hour2 = (data.list[i-1].dt_txt).substring(5,10);
+                if ($hour1 !== $hour2) {
+                    $($div).prepend($dateDiv);
+                }
+            }
+
+
+
             //Get hour from full date and change to a number to be used in displaying the hourly information
             let $hour = Number($fullDateTime.substring(11,13));
 
