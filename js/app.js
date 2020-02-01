@@ -17,7 +17,7 @@ $(() => {
     });
 
     $.ajax({
-        url:"http://api.openweathermap.org/data/2.5/forecast?zip=11746,us&units=imperial&APPID=d8ef3b8d18705a7d1fa4cf253411f06b"
+        url:"https://api.openweathermap.org/data/2.5/forecast?zip=11746,us&units=imperial&APPID=d8ef3b8d18705a7d1fa4cf253411f06b"
     }).then( data => {
         console.log(data);
         for(let i = 0; i < data.list.length; i++) {
