@@ -27,7 +27,7 @@ h1 {
 
 .container {
     width: 80%;
-    margin: 10% auto;
+    margin: 7% auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -36,7 +36,7 @@ h1 {
 }
 
 .weather-widget, .traffic-widget {
-    margin: 0 1% 10% 1%;
+    margin: 0 1% 15% 1%;
     width: 400px;
     height: 600px;
     border: 2px solid black;
@@ -57,4 +57,25 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-around;
     
+}
+
+#hourly-weather {
+    display: flex;
+    overflow: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hour-card {
+    width: 300px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.hour-card img {
+    width: 100px;
+    height: 100px;
 }
