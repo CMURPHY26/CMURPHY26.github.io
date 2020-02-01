@@ -4,7 +4,7 @@ console.log("It's working!")
 $(() => {
     console.log($)
     $.ajax({
-        url:"http://api.openweathermap.org/data/2.5/weather?zip=11746,us&units=imperial&APPID=d8ef3b8d18705a7d1fa4cf253411f06b"
+        url:"https://api.openweathermap.org/data/2.5/weather?zip=98125,us&units=imperial&APPID=d8ef3b8d18705a7d1fa4cf253411f06b"
     }).then( data => {
         console.log(data);
         let icon = $("<img>").attr("src", `img/${data.weather[0].icon}@2x.png`).attr("id", "current-icon");
