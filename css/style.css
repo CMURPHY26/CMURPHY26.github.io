@@ -64,6 +64,7 @@ h1 {
     overflow: auto;
     flex-wrap: wrap;
     justify-content: center;
+    height: 400px;
 }
 
 .hour-card {
@@ -78,6 +79,7 @@ h1 {
 .hour-card img {
     width: 100px;
     height: 100px;
+    margin-bottom: 10px;
 }
 
 #current-traffic {

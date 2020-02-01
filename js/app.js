@@ -11,11 +11,14 @@ $(() => {
         console.log(data);
         //CREATE image tag and add src attribute to be dynamic icon value to connect 
         let icon = $("<img>").attr("src", `img/${data.weather[0].icon}@2x.png`).attr("id", "current-icon");
-        // let degreeF = $("<span>").append("&#8457");
+        let degreeF = $("<span>").html("&#8457;");
+        let degreeF2 = $("<span>").html("&#8457;");
         //CREATE variable for current temperature
         let temperature = $("<h3>").text(`Temperature: ${Math.floor(data.main.temp)}`);
+        temperature.append(degreeF);
         //CREATE variable for current feelsLikeTemp
         let feelsLikeTemp = $("<h3>").text(`Feels Like: ${Math.floor(data.main.feels_like)}`);
+        feelsLikeTemp.append(degreeF2);
         //APPEND current icon
         $("#current-weather").append(icon);
         //APPEND current temp 
@@ -39,7 +42,7 @@ $(() => {
             //Get full date and time from each hourly object
             let $fullDateTime = data.list[i].dt_txt;
             //Get month and day info from full date
-            let $fullDate = $fullDateTime.substring(5,10);
+            // let $fullDate = $fullDateTime.substring(5,10);
             // console.log($fullDate);
 
             //CONDITIONAL IF hour1 date does not match hour2 date
@@ -83,6 +86,8 @@ $(() => {
             // console.log(typeof $hour)
             //CREATE p tag and add rounded down temp
             let $p = $("<p>").text(`${Math.ceil(data.list[i].main.temp)}`);
+            let degreeF = $('<span>').html("&#8457;");
+            $p.append(degreeF);
             //APPEND hour string, icon and p tag to div
             $div.append($hour, icon, $p);
             //APPEND div to #hourly-weather
@@ -91,7 +96,8 @@ $(() => {
      
     });
 
+
+    
+
 });
 
-
-/* <script type="text/javascript" src="http://www.mta.info/sites/all/libraries/mta_WidgetScripts/serviceStatusWidget.js"></script>  */
