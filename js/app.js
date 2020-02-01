@@ -22,7 +22,8 @@ $(() => {
         console.log(data);
         for(let i = 0; i < data.list.length; i++) {
             let icon = $("<img>").attr("src", `img/${data.list[i].weather[0].icon}@2x.png`);
-            let $div = $("<div>").addClass("hour-card")
+            let $div = $("<div>").addClass("hour-card");
+            // let $hour = $("<h4>").text(`Time: ${}`)
             let $p = $("<p>").text(`${Math.ceil(data.list[i].main.temp)}`);
             $div.append(icon, $p);
             $("#hourly-weather").append($div);
@@ -30,3 +31,6 @@ $(() => {
     });
 
 });
+
+
+/* <script type="text/javascript" src="http://www.mta.info/sites/all/libraries/mta_WidgetScripts/serviceStatusWidget.js"></script>  */
