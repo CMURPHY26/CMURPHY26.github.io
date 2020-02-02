@@ -4,6 +4,7 @@
 }
 
 body {
+    background: rgb(41, 84, 177);
     margin: 0;
 }
 
@@ -25,10 +26,11 @@ h1 {
     margin: 0 1% 10% 1%;
     width: 400px;
     height: 100%;
-    border: 2px solid black;
+    border: 2px solid rgba(255, 255, 255, 0.7);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .weather-widget {
@@ -153,6 +155,10 @@ input::placeholder {
         font-size: 1em;
     }
 
+    button {
+        display: none;
+    }
+
   }
 
   @media only screen and (max-width: 320px) {
@@ -169,6 +175,10 @@ input::placeholder {
 
     .traffic {
         padding: 0;
+    }
+
+    button {
+        display: none;
     }
 
   }
