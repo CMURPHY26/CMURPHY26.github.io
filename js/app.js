@@ -1,14 +1,15 @@
 
 console.log("It's working!")
 
-const getZipCode = (event) => {
-    event.preventDefault();
-    let userInput = $("#zipcode").val();
-    console.log(userInput);
-}
+// const getZipCode = (event) => {
+//     event.preventDefault();
+//     let userInput = $("#zipcode").val();
+//     console.log(userInput);
+// }
 
-$(() => {
-
+//function to display default weather data for Huntington Station, NY
+//so there is content to fill before user submits new Zip Code
+const defaultWeather = () => {
     $.ajax({
         url:"https://api.openweathermap.org/data/2.5/weather?units=imperial&APPID=d8ef3b8d18705a7d1fa4cf253411f06b&zip=11746"
     }).then( data => {
@@ -97,10 +98,13 @@ $(() => {
             //APPEND div to #hourly-weather
             $("#hourly-weather").append($div);
         }
-     
     });
+}
 
-
+$(() => {
+    //displays default weather data for zip code: 11746
+    defaultWeather();
+    //Event listener for form submission to update current weather and hourly forecast based on userInput zip code
     $("form").on("submit", (event) => {
         event.preventDefault();
         let userInput = $("#zipcode").val();
