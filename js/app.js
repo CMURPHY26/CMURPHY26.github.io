@@ -101,7 +101,18 @@ const defaultWeather = () => {
     });
 }
 
+const openModal = () => {
+    $(".modal").css("display", "block");
+}
+
+const closeModal = () => {
+    $(".modal").css("display", "none");
+}
+
 $(() => {
+    $("#open-modal").on("click", openModal)
+    $("#close").on("click", closeModal)
+
     //displays default weather data for zip code: 11746
     defaultWeather();
     //Event listener for form submission to update current weather and hourly forecast based on userInput zip code
