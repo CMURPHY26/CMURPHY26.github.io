@@ -152,10 +152,7 @@ $(() => {
                 let degreeF = $("<span>").html("&#8457;");
                 let degreeF2 = $("<span>").html("&#8457;");
 
-                //CREATE variable for weather status and
-                //APPEND to div with h2
-                let weatherStatus = $("<span>").attr("id", "weather-description").text(data.weather[0].description);
-                $("#current-weather").children().eq(2).append(weatherStatus);
+
 
                 //CREATE variable for current temperature
                 let temperature = $("<h3>").text(`Temperature: ${Math.floor(data.main.temp)}`);
@@ -169,10 +166,15 @@ $(() => {
                 $("#current-weather").append(temperature);
                 //APPEND current feelsLikeTemp
                 $("#current-weather").append(feelsLikeTemp);
-
+                //CREATE variable for location and
+                //PREPEND location to top of div
                 let location = $("<h4>").css("margin", "0").text(data.name);
-
                 $('#current-weather').prepend(location);
+
+                //CREATE variable for weather status and
+                //APPEND to div with h2
+                let weatherStatus = $("<span>").attr("id", "weather-description").text(data.weather[0].description);
+                $("#current-weather").children().eq(2).append(weatherStatus);
             });
 
 
