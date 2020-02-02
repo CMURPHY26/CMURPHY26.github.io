@@ -32,7 +32,7 @@ h1 {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .weather-widget, .traffic-widget {
@@ -43,6 +43,12 @@ h1 {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+}
+
+.weather-widget {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 }
 
 .weather, .traffic {
@@ -130,3 +136,9 @@ h1 {
     border-radius: 2px;
     margin: 3% auto;
 }
+
+input {
+    font-size: 20px;
+}
+
+/* input */
