@@ -117,9 +117,15 @@ h1 {
     display: none;
 }
 
+#open-modal {
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 #modal-mapbox {
     width: 810px;
-    height: 675px;
+    height: 640px;
     background: white;
     border-radius: 2px;
     margin: 3% auto;

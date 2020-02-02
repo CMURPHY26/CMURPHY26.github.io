@@ -38,15 +38,15 @@
             </div>
             <div class="traffic" id="traffic-map">
                 <h2>Traffic Map</h2>
-                <h4 id="open-modal">Click here for Larger Map</h4>
                 <iframe frameborder="0" style="border: none; overflow: hidden;" scrolling="no" src="https://511ny.org/Map/EmbeddedMap?&region=LI&layers=TrafficSpeeds,WinterRoads,Incidents,SubIncidentClosures,TransitIncidents,Construction,TransitConstruction,GeneralInfo,Closures,EventClosures,ConstructionClosures,IncidentClosures,WeatherEvents,WeatherForecast&size=2" width="350px" height="320px"></iframe>
+                <button id="open-modal">Click for Large Map</button>
             </div>
         </div>
     </div>
     <div class="modal">
         <div id="modal-mapbox">
             <iframe frameborder="0" style="border: none; overflow: hidden;" scrolling="no" src="https://511ny.org/Map/EmbeddedMap?&region=LI&layers=TrafficSpeeds,WinterRoads,Incidents,SubIncidentClosures,TransitIncidents,Construction,TransitConstruction,GeneralInfo,Closures,EventClosures,ConstructionClosures,IncidentClosures,WeatherEvents,WeatherForecast,TransitTiles&size=0" width="810px" height="640px"></iframe>
-            <a id="close" href="#">Close</a>
+            <!-- <a id="close" href="#">Close</a> -->
         </div>
     </div>
 </body>

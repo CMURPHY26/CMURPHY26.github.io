@@ -110,8 +110,9 @@ const closeModal = () => {
 }
 
 $(() => {
-    $("#open-modal").on("click", openModal)
-    $("#close").on("click", closeModal)
+    $("#traffic-map").on("click", openModal)
+    // $("#close").on("click", closeModal)
+    $(".modal").on("click", closeModal)
 
     //displays default weather data for zip code: 11746
     defaultWeather();
