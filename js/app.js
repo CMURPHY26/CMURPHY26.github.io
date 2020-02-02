@@ -20,6 +20,9 @@ const defaultWeather = () => {
         let icon = $("<img>").attr("src", `img/${data.weather[0].icon}@2x.png`).attr("id", "current-icon");
         let degreeF = $("<span>").html("&#8457;");
         let degreeF2 = $("<span>").html("&#8457;");
+        
+        //CREATE variable for weather status and
+        //APPEND to div with h2
         let weatherStatus = $("<span>").attr("id", "weather-description").text(data.weather[0].description);
         $("#current-weather").children().eq(1).append(weatherStatus);
         //CREATE variable for current temperature
@@ -34,6 +37,8 @@ const defaultWeather = () => {
         $("#current-weather").append(temperature);
         //APPEND current feelsLikeTemp
         $("#current-weather").append(feelsLikeTemp);
+        let location = $("<h4>").css("margin", "0").text(data.name);
+        $('#current-weather').prepend(location);
     });
 
     //GET AJAX call for local hourly weather data by my zipcode
@@ -122,11 +127,15 @@ $(() => {
     $("form").on("submit", (event) => {
         event.preventDefault();
         let userInput = $("#zipcode").val();
+        $('#zipcode').val("");
         
         if(userInput.length === 5) {
+            $("#current-weather").children().eq(5).remove();
             $("#current-weather").children().eq(4).remove();
             $("#current-weather").children().eq(3).remove();
-            $("#current-weather").children().eq(2).remove();
+            $("#current-weather").children().eq(0).remove();
+            $("#weather-status").children().eq(1).remove();
+
             $("#hourly-weather").empty();
             let $hourlyWeatherH2 = $("<h2>").text("Hourly Weather");
             $("#hourly-weather").append($hourlyWeatherH2);
@@ -142,6 +151,12 @@ $(() => {
                 let icon = $("<img>").attr("src", `img/${data.weather[0].icon}@2x.png`).attr("id", "current-icon").css("height", "100px");
                 let degreeF = $("<span>").html("&#8457;");
                 let degreeF2 = $("<span>").html("&#8457;");
+
+                //CREATE variable for weather status and
+                //APPEND to div with h2
+                let weatherStatus = $("<span>").attr("id", "weather-description").text(data.weather[0].description);
+                $("#current-weather").children().eq(2).append(weatherStatus);
+
                 //CREATE variable for current temperature
                 let temperature = $("<h3>").text(`Temperature: ${Math.floor(data.main.temp)}`);
                 temperature.append(degreeF);
@@ -154,6 +169,10 @@ $(() => {
                 $("#current-weather").append(temperature);
                 //APPEND current feelsLikeTemp
                 $("#current-weather").append(feelsLikeTemp);
+
+                let location = $("<h4>").css("margin", "0").text(data.name);
+
+                $('#current-weather').prepend(location);
             });
 
 
