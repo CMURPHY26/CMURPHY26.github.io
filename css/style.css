@@ -27,7 +27,7 @@ h1 {
 
 .container {
     width: 80%;
-    margin: 7% auto;
+    margin: 3% auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -36,7 +36,7 @@ h1 {
 }
 
 .weather-widget, .traffic-widget {
-    margin: 0 1% 15% 1%;
+    margin: 0 1% 10% 1%;
     width: 400px;
     height: 100%;
     border: 2px solid black;
@@ -76,6 +76,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     height: 400px;
+    margin: 0 10px;
 }
 
 .hour-card {
@@ -99,6 +100,6 @@ h1 {
 }
 
 #traffic-map {
-    height: 300px;
+    height: 450px;
     text-align: center;
 }
