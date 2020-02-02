@@ -46,7 +46,7 @@ h1 {
 }
 
 .weather, .traffic {
-    height: 200px;
+    height: 225px;
     border: 1px dotted black;
     border-radius: 20px;
     padding: 10px 15px 10px 15px;
@@ -56,8 +56,19 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    
 }
+
+#current-weather div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+}
+
+#current-weather form {
+    padding-top: 20px;
+}
+
 
 #hourly-weather {
     display: flex;

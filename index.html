@@ -17,15 +17,17 @@
     <div class="container">
         <div class="weather-widget">
             <div class="weather" id="current-weather">
-                <h2>Current Weather
-                </h2>
+                <form>
+                    <input type="text" placeholder="Zip Code" id="zipcode" size="20" maxlength="5">
+                    <input type="submit" value="Search">
+                </form>
+                <div>
+                    <h2>Current Weather</h2>
+                </div>
             </div>
             <div class="weather" id="hourly-weather">
                 <h2>Hourly Forecast</h2>
             </div>
-            <!-- <div class="weather" id="daily-weather">
-                  <h2>Daily Weather</h2>
-            </div> -->
         </div>
         <div class="traffic-widget">
             <div class="traffic" id="current-traffic">
