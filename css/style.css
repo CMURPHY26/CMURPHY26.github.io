@@ -3,6 +3,10 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 
+body {
+    margin: 0;
+}
+
 h1 {
     text-align: center;
 }
@@ -121,21 +125,26 @@ h1 {
 
 input {
     font-size: 20px;
+    background: rgba(0,0,0,.2);
+    color: grey;
+    /* place-content: white; */
 }
 
-#zip-search {
-    padding: 10px;
-    /* font-size: 20px; */
-}
+input::placeholder {
+    color: grey;
+  }
+
 
 @media only screen and (max-width: 415px) {
-    #current-icon {
-        width: 75px;
-    }
     .weather-widget {
         margin: 0 0 10% 0;
         position: static;
     }
+
+    .traffic, .weather {
+        padding: 0;
+    }
+
   }
 
   @media only screen and (max-width: 320px) {
@@ -144,6 +153,10 @@ input {
     }
     .weather-widget {
         position: static;
+    }
+
+    .traffic {
+        padding: 0;
     }
 
   }

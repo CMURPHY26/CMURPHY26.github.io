@@ -17,7 +17,7 @@ const defaultWeather = () => {
         console.log(data);
         //CREATE image tag and add src attribute to be dynamic icon value to connect 
 
-        let icon = $("<img>").attr("src", `img/${data.weather[0].icon}@2x.png`).attr("id", "current-icon").css("height", "100px");
+        let icon = $("<img>").attr("src", `img/${data.weather[0].icon}@2x.png`).attr("id", "current-icon");
         let degreeF = $("<span>").html("&#8457;");
         let degreeF2 = $("<span>").html("&#8457;");
         //CREATE variable for current temperature
