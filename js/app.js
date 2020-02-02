@@ -117,7 +117,7 @@ const closeModal = () => {
 }
 
 $(() => {
-    $("#traffic-map").on("click", openModal)
+    $("#open-modal").on("click", openModal)
     // $("#close").on("click", closeModal)
     $(".modal").on("click", closeModal)
 

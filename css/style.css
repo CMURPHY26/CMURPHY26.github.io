@@ -6,6 +6,7 @@
 body {
     background: rgb(41, 84, 177);
     margin: 0;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 h1 {
@@ -41,16 +42,18 @@ h1 {
 
 .weather, .traffic {
     height: 250px;
-    border: 1px dotted black;
+    /* border: 1px dotted black; */
     border-radius: 20px;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 15px 0px 15px;
 }
 
 #current-weather {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    box-shadow: 0 5px rgba(255, 255, 255, 0.3);
 }
+
 
 #current-weather div {
     display: flex;
@@ -76,7 +79,7 @@ h1 {
 .hour-card {
     width: 300px;
     height: 100px;
-    border: 1px solid black;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     display: flex;
     justify-content: space-around;
@@ -89,14 +92,15 @@ h1 {
 }
 
 #current-traffic {
-    height: 550px;
+    height: 520px;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px rgba(255, 255, 255, 0.3);
 }
 
 #traffic-map {
     height: 450px;
     text-align: center;
-    cursor: pointer;
 }
 
 .modal {
@@ -128,12 +132,12 @@ h1 {
 input {
     font-size: 20px;
     background: rgba(0,0,0,.2);
-    color: grey;
+    color: white;
     border-radius: 20px;
 }
 
 input::placeholder {
-    color: grey;
+    color: white;
   }
 
 #weather-description {
@@ -159,6 +163,10 @@ input::placeholder {
         display: none;
     }
 
+    #current-weather h4 {
+        padding-top: 20px;
+    }
+
   }
 
   @media only screen and (max-width: 320px) {
@@ -179,6 +187,10 @@ input::placeholder {
 
     button {
         display: none;
+    }
+
+    #current-weather h4 {
+        padding-top: 20px;
     }
 
   }
