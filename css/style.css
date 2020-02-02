@@ -127,12 +127,16 @@ input {
     font-size: 20px;
     background: rgba(0,0,0,.2);
     color: grey;
-    /* place-content: white; */
+    border-radius: 20px;
 }
 
 input::placeholder {
     color: grey;
   }
+
+#weather-description {
+    text-transform: capitalize;
+}
 
 
 @media only screen and (max-width: 415px) {
@@ -145,11 +149,19 @@ input::placeholder {
         padding: 0;
     }
 
+    h3 {
+        font-size: 1em;
+    }
+
   }
 
   @media only screen and (max-width: 320px) {
     #current-icon {
         width: 50px;
+    }
+
+    h3 {
+        font-size: 1em;
     }
     .weather-widget {
         position: static;

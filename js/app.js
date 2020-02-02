@@ -20,6 +20,8 @@ const defaultWeather = () => {
         let icon = $("<img>").attr("src", `img/${data.weather[0].icon}@2x.png`).attr("id", "current-icon");
         let degreeF = $("<span>").html("&#8457;");
         let degreeF2 = $("<span>").html("&#8457;");
+        let weatherStatus = $("<span>").attr("id", "weather-description").text(data.weather[0].description);
+        $("#current-weather").children().eq(1).append(weatherStatus);
         //CREATE variable for current temperature
         let temperature = $("<h3>").text(`Temperature: ${Math.floor(data.main.temp)}`);
         temperature.append(degreeF);
