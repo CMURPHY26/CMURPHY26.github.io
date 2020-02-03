@@ -73,7 +73,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     height: 400px;
-    margin: 0 10px;
+    margin: 10px 10px;
 }
 
 .hour-card {
@@ -144,6 +144,11 @@ input::placeholder {
     text-transform: capitalize;
 }
 
+@media only screen and (max-width: 1024px) {
+    .weather-widget {
+        position: static;
+    }
+}
 
 @media only screen and (max-width: 415px) {
     body {
