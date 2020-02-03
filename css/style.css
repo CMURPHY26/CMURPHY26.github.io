@@ -4,7 +4,7 @@
 }
 
 body {
-    background: rgb(41, 84, 177);
+    background: url("../img/overcast.jpg");
     margin: 0;
     color: rgba(255, 255, 255, 0.9);
 }

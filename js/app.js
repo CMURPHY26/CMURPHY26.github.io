@@ -117,8 +117,10 @@ const closeModal = () => {
 }
 
 $(() => {
+    //Click listener to open modal by button
     $("#open-modal").on("click", openModal)
     // $("#close").on("click", closeModal)
+    //Click listener on body to close modal
     $(".modal").on("click", closeModal)
 
     //displays default weather data for zip code: 11746
