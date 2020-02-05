@@ -69,9 +69,11 @@ h1 {
 
 #hourly-weather {
     display: flex;
+    flex-direction: column;
     overflow: auto;
-    flex-wrap: wrap;
-    justify-content: center;
+    /* flex-wrap: wrap; */
+    justify-content: flex-start;
+    align-items: center;
     height: 400px;
     margin: 10px 10px;
 }

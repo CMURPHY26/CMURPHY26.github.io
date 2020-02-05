@@ -91,6 +91,11 @@ const defaultWeather = () => {
                 $hour = `${$hour} PM`;
             }
 
+
+            if (i === 0) {
+                $("#hourly-weather").append($dateDiv);
+            }
+
             //CREATE p tag and add rounded down temp
             let $p = $("<p>").text(`${Math.ceil(data.list[i].main.temp)}`);
             let degreeF = $('<span>').html("&#8457;");
@@ -108,7 +113,7 @@ const defaultWeather = () => {
                 if ($hour1 !== $hour2) {
                     $($div).before($dateDiv);
                 }
-            }
+            } 
 
         }
     });
@@ -237,6 +242,10 @@ $(() => {
                         $hour = `${$hour} PM`;
                     }
         
+                    if (i === 0) {
+                        $("#hourly-weather").append($dateDiv);
+                    }
+
                     //CREATE p tag and add rounded down temp
                     let $p = $("<p>").text(`${Math.ceil(data.list[i].main.temp)}`);
                     let degreeF = $('<span>').html("&#8457;");
