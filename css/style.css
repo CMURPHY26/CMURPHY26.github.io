@@ -78,6 +78,10 @@ h1 {
     margin: 10px 10px;
 }
 
+#hourly-weather h2 {
+    margin-bottom: 0;
+}
+
 .hour-card {
     width: 300px;
     height: 100px;

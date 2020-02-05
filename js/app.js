@@ -150,7 +150,7 @@ $(() => {
             $("#weather-status").children().eq(1).remove();
 
             $("#hourly-weather").empty();
-            let $hourlyWeatherH2 = $("<h2>").text("Hourly Weather");
+            let $hourlyWeatherH2 = $("<h2>").text("Hourly Forecast");
             $("#hourly-weather").append($hourlyWeatherH2);
             
             //GET AJAX call for local current weather by my zipcode
