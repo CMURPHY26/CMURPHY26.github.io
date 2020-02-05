@@ -147,11 +147,16 @@ input::placeholder {
 #day {
     padding: 15px 0;
     font-size: 1.25em;
+    text-transform: uppercase;
 }
 
 @media only screen and (max-width: 1024px) {
     .weather-widget {
         position: static;
+    }
+    body {
+        background-position: center;
+        background-size: cover;
     }
 }
 
