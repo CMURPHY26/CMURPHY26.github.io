@@ -53,25 +53,21 @@ const defaultWeather = () => {
             let icon = $("<img>").attr("src", `img/${data.list[i].weather[0].icon}@2x.png`);
             //create div for hourly card
             let $div = $("<div>").addClass("hour-card");
-            //Get full date and time from each hourly object
-            let $fullDateTime = data.list[i].dt_txt;
-            //Get month and day info from full date
-            // let $fullDate = $fullDateTime.substring(5,10);
-            // console.log($fullDate);
-
-            //CONDITIONAL IF hour1 date does not match hour2 date
-            //THEN prepend the date to that div to show the new day
-            let $hour1 =(data.list[i].dt_txt).substring(5,10);
-            let $dateDiv = $("<div>").text($hour1);
-            if(i > 0) { 
-                let $hour2 = (data.list[i-1].dt_txt).substring(5,10);
-                if ($hour1 !== $hour2) {
-                    $($div).prepend($dateDiv);
-                }
-            }
+            //STORE current iteration date in fullDate variable
+            let $fullDate = new Date(data.list[i].dt_txt);
+            //STORE date in variable
+            let $hour1 = $fullDate.getDate();
+            //GET day index from fulldate and store in variable
+            let dayIndex = $fullDate.getDay();
+            //Days array
+            let daysArray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+            //SET day variable to dayIndex of daysArray
+            let day = daysArray[dayIndex];
+            //CREATE dateDiv with day text
+            let $dateDiv = $("<div>").attr("id", "day").text(day);
 
             //Get hour from full date and change to a number to be used in displaying the hourly information
-            let $hour = Number($fullDateTime.substring(11,13));
+            let $hour = $fullDate.getHours();
 
             //Conditional IF hour === 12 
             //THEN hour = hour + PM
@@ -95,7 +91,6 @@ const defaultWeather = () => {
                 $hour = `${$hour} PM`;
             }
 
-            // console.log(typeof $hour)
             //CREATE p tag and add rounded down temp
             let $p = $("<p>").text(`${Math.ceil(data.list[i].main.temp)}`);
             let degreeF = $('<span>').html("&#8457;");
@@ -104,6 +99,17 @@ const defaultWeather = () => {
             $div.append($hour, icon, $p);
             //APPEND div to #hourly-weather
             $("#hourly-weather").append($div);
+            //CONDITIONAL IF hour1 date does not match hour2 date
+            //THEN prepend the date to that div to show the new day
+            if(i > 0) { 
+                let $prevfullDate = new Date(data.list[i-1].dt_txt);
+                let $hour2 = $prevfullDate.getDate();
+                // let $hour2 = (data.list[i-1].dt_txt).substring(5,10);
+                if ($hour1 !== $hour2) {
+                    $($div).before($dateDiv);
+                }
+            }
+
         }
     });
 }
@@ -193,25 +199,21 @@ $(() => {
                     let icon = $("<img>").attr("src", `img/${data.list[i].weather[0].icon}@2x.png`);
                     //create div for hourly card
                     let $div = $("<div>").addClass("hour-card");
-                    //Get full date and time from each hourly object
-                    let $fullDateTime = data.list[i].dt_txt;
-                    //Get month and day info from full date
-                    // let $fullDate = $fullDateTime.substring(5,10);
-                    // console.log($fullDate);
-        
-                    //CONDITIONAL IF hour1 date does not match hour2 date
-                    //THEN prepend the date to that div to show the new day
-                    let $hour1 =(data.list[i].dt_txt).substring(5,10);
-                    let $dateDiv = $("<div>").text($hour1);
-                    if(i > 0) { 
-                        let $hour2 = (data.list[i-1].dt_txt).substring(5,10);
-                        if ($hour1 !== $hour2) {
-                            $($div).prepend($dateDiv);
-                        }
-                    }
+                    //STORE current iteration date in fullDate variable
+                    let $fullDate = new Date(data.list[i].dt_txt);
+                    //STORE date in variable
+                    let $hour1 = $fullDate.getDate();
+                    //GET day index from fulldate and store in variable
+                    let dayIndex = $fullDate.getDay();
+                    //Days array
+                    let daysArray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+                    //SET day variable to dayIndex of daysArray
+                    let day = daysArray[dayIndex];
+                    //CREATE dateDiv with day text
+                    let $dateDiv = $("<div>").attr("id", "day").text(day);
         
                     //Get hour from full date and change to a number to be used in displaying the hourly information
-                    let $hour = Number($fullDateTime.substring(11,13));
+                    let $hour = $fullDate.getHours();
         
                     //Conditional IF hour === 12 
                     //THEN hour = hour + PM
@@ -235,7 +237,6 @@ $(() => {
                         $hour = `${$hour} PM`;
                     }
         
-                    // console.log(typeof $hour)
                     //CREATE p tag and add rounded down temp
                     let $p = $("<p>").text(`${Math.ceil(data.list[i].main.temp)}`);
                     let degreeF = $('<span>').html("&#8457;");
@@ -244,6 +245,17 @@ $(() => {
                     $div.append($hour, icon, $p);
                     //APPEND div to #hourly-weather
                     $("#hourly-weather").append($div);
+                    //CONDITIONAL IF hour1 date does not match hour2 date
+                    //THEN prepend the date to that div to show the new day
+                    if(i > 0) { 
+                        let $prevfullDate = new Date(data.list[i-1].dt_txt);
+                        let $hour2 = $prevfullDate.getDate();
+                        // let $hour2 = (data.list[i-1].dt_txt).substring(5,10);
+                        if ($hour1 !== $hour2) {
+                            $($div).before($dateDiv);
+                        }
+                    }
+        
                 }
             
             });

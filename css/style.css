@@ -144,6 +144,12 @@ input::placeholder {
     text-transform: capitalize;
 }
 
+#day {
+    padding: 10px 0;
+    font-size: 1.25em;
+    text-transform: capitalize;
+}
+
 @media only screen and (max-width: 1024px) {
     .weather-widget {
         position: static;
